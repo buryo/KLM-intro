@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLM Intro</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="slider">
+      <div class="row">
+        <div id="left-section" class="col">
+          <svg class="bi bi-box-arrow-left" width="3em" height="3em" viewBox="0 0 20 20" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M6.354 13.354a.5.5 0 000-.708L3.707 10l2.647-2.646a.5.5 0 10-.708-.708l-3 3a.5.5 0 000 .708l3 3a.5.5 0 00.708 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div id="middle-section" class="col-10">
+          Content of different pages will come here
+          <a routerLink="page1">Page 1</a>
+          <a routerLink="page2">Page 2</a>
+          <a routerLink="page3">Page 3</a>
+
+          <main [@routeAnimations]="prepareRoute(outlet)">
+            <router-outlet #outlet="outlet"></router-outlet>
+          </main>
+        </div>
+        <div id="right-section" class="col">
+          <svg class="bi bi-box-arrow-right" width="3em" height="3em" viewBox="0 0 20 20" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M6.354 13.354a.5.5 0 000-.708L3.707 10l2.647-2.646a.5.5 0 10-.708-.708l-3 3a.5.5 0 000 .708l3 3a.5.5 0 00.708 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
