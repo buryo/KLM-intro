@@ -1,18 +1,5 @@
-
-.row{
-    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh; /* These two lines are counted as one :-)       */
-  
-    display: flex;
-    align-items: center;
-    background-color: #c2deea;
-
-  }
-
-  #middle-section{
-      background-color: red;
-      margin: auto;
-      width: auto;
-      height: auto;
-  }
-
+main {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  background-color: #c2deea;
+}
