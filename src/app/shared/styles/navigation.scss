@@ -1,0 +1,55 @@
+@import "animations.scss";
+
+%base-navigation-styles {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  transition: 500ms;
+  width: 8%;
+  z-index: 10;
+
+  &:hover {
+    background-color: #ffffff6b;
+
+    &:after {
+      animation: shine-to-right 1s ease-in-out infinite;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -210%;
+      width: 200%;
+      height: 100%;
+      opacity: 0;
+
+      background: rgba(255, 255, 255, 0.13);
+      background: linear-gradient(to right,
+          rgba(255, 255, 255, 0.13) 0%,
+          rgba(255, 255, 255, 0.13) 33%,
+          rgba(255, 255, 255, 0.5) 66%,
+          rgba(255, 255, 255, 0.0) 100%);
+    }
+
+    fa-icon {
+      opacity: 1;
+    }
+  }
+
+  fa-icon {
+    color: $primary-color;
+    transition: 500ms;
+    opacity: 0.4;
+  }
+}
+
+.navigate-right {
+  @extend %base-navigation-styles;
+  right: 0;
+}
+
+.navigate-left {
+  @extend %base-navigation-styles;
+  left: 0;
+}
