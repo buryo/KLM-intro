@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+
+// Icons
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
-  selector: 'app-page1',
-  templateUrl: './page1.component.html',
-  styleUrls: ['./page1.component.css']
+  selector: 'app-eco-system',
+  templateUrl: './eco-system.component.html',
+  styleUrls: ['./eco-system.component.css',]
 })
-export class Page1Component implements OnInit {
+export class EcoSystemComponent implements OnInit {
   faChevronCircleRight = faChevronCircleRight;
 
   constructor() { }
