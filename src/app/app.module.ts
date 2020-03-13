@@ -1,4 +1,3 @@
-import { IddleService } from './shared/services/iddle.service';
 import { CoreModule } from './modules/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +19,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TestModule,
     CoreModule,
     FontAwesomeModule,
-    IddleService
   ],
   providers: [],
   bootstrap: [AppComponent]
