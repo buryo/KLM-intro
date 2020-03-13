@@ -1,57 +1,49 @@
-import { Component } from '@angular/core';
-import { slider } from './route-animations';
-import { RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
+import { slider } from "./route-animations";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations: [
-    slider
-  ]
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+  animations: [slider]
 })
 export class AppComponent {
-
   // You can use this data to control which transition to execute for each route.
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+    return (
+      outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
+    );
   }
-  
-  timeoutID: number;
 
-constructor(){}
- 
-setup() {
-    document.addEventListener("mousemove", this.resetTimer, false);
-    document.addEventListener("mousedown", this.resetTimer, false);
-    document.addEventListener("keypress", this.resetTimer, false);
-    document.addEventListener("DOMMouseScroll", this.resetTimer, false);
-    document.addEventListener("mousewheel", this.resetTimer, false);
-    document.addEventListener("touchmove", this.resetTimer, false);
-    document.addEventListener("MSPointerMove", this.resetTimer, false);
- 
-    thisstartTimer();
-}
-setup();
- 
- startTimer() {
-    // wait 2 seconds before calling goInactive
-    this.timeoutID = window.setTimeout(this.goInactive, 2000);
-}
- 
- resetTimer(e) {
-    window.clearTimeout(this.timeoutID);
- 
-    this.goActive();
-}
- 
-goInactive() {
-  console.log("I'm inActive");
-}
- 
-goActive() {
-  console.log("I'm active");         
-    startTimer();
-}
+  timer: any;
 
+  constructor() {}
+
+  //Seting up the listners to DOM if the user is active
+  setup() {
+    document.addEventListener("mousemove", ()=> {
+      this.resetTimer(this.timer)
+    });
+    // document.addEventListener("keypress", this.resetTimer);
+    this.timer = this.startTimer();
+  }
+
+  startTimer() {
+    // wait 2 seconds before calling checkInactive
+    return setTimeout(this.checkInactive, 2000);
+  }
+
+  //Reset the timer if the user is moving the mouse or pressing a key
+  resetTimer(timer) {
+    clearTimeout(timer);
+    this.timer = this.startTimer();
+  }
+
+  //If the user is inactive this function will excute
+  checkInactive() {
+    console.log("I'm inActive");
+  }
+
+ 
 }
