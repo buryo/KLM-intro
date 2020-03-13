@@ -1,0 +1,9 @@
+Get the time out of the config file
+The homepage cannot have the confirm modal redirecting to the homepage
+If the confirm is activated and not interacted then automaticaly continue to the homepage
+
+
+1 = confirm verschijnt
+2 = auto timer moet ingeschakeld worden in de achtgrond als confirm verschijnt
+3 = auto timer moet na x tijd redirecten naar homepage
+4 = FINAL: de auto timer mag niet active zijn op de homepage
