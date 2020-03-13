@@ -7,3 +7,7 @@ If the confirm is activated and not interacted then automaticaly continue to the
 2 = auto timer moet ingeschakeld worden in de achtgrond als confirm verschijnt
 3 = auto timer moet na x tijd redirecten naar homepage
 4 = FINAL: de auto timer mag niet active zijn op de homepage
+
+----Inserting ngBootstrap Modal------
+i18n geinstalleerd maar kreeg nog andere 3 errors
+ngModule error bij het inladen van ng-bootstrap

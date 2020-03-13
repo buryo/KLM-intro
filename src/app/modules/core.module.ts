@@ -1,28 +1,22 @@
-import { EcoSystemComponent } from './pages/eco-system/eco-system.component';
-import { RadicalInnovationComponent } from './pages/radical-innovation/radical-innovation.component';
+import { EcoSystemComponent } from "./pages/eco-system/eco-system.component";
+import { RadicalInnovationComponent } from "./pages/radical-innovation/radical-innovation.component";
 
-import { AppRoutingModule } from '../app-routing.module';
-import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-import { NgbdModalComponent, ModalComponent } from '../shared/modal/modal.component';
-
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from "../app-routing.module";
+import { CommonModule } from "@angular/common";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
-  declarations: [EcoSystemComponent,NgbdModalComponent, ModalComponent, RadicalInnovationComponent],
+  declarations: [
+    EcoSystemComponent,
+    RadicalInnovationComponent,
+  ],
   imports: [
     AppRoutingModule,
     CommonModule,
     FontAwesomeModule,
     BrowserModule,
-    ModalComponent,
-    NgbModule
   ],
-  exports: [ModalComponent],
-  bootstrap: [ModalComponent],
-  entryComponents: [ModalComponent]
 })
-export class CoreModule { }
+export class CoreModule {}
