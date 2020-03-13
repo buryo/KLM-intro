@@ -15,21 +15,13 @@
     background-color: #ffffff6b;
 
     &:after {
-      animation: shine-to-right 1s ease-in-out infinite;
       content: "";
       position: absolute;
       top: 0;
-      left: -210%;
       width: 200%;
       height: 100%;
       opacity: 0;
-
       background: rgba(255, 255, 255, 0.13);
-      background: linear-gradient(to right,
-          rgba(255, 255, 255, 0.13) 0%,
-          rgba(255, 255, 255, 0.13) 33%,
-          rgba(255, 255, 255, 0.5) 66%,
-          rgba(255, 255, 255, 0.0) 100%);
     }
 
     fa-icon {
@@ -47,9 +39,33 @@
 .navigate-right {
   @extend %base-navigation-styles;
   right: 0;
+
+  &:hover {
+    &:after {
+      animation: shine-to-right 1s ease-in-out infinite;
+      left: -210%;
+      background: linear-gradient(to right,
+          rgba(255, 255, 255, 0.13) 0%,
+          rgba(255, 255, 255, 0.13) 33%,
+          rgba(255, 255, 255, 0.5) 66%,
+          rgba(255, 255, 255, 0.0) 100%);
+    }
+  }
 }
 
 .navigate-left {
   @extend %base-navigation-styles;
   left: 0;
+
+  &:hover {
+    &:after {
+      animation: shine-to-left 1s ease-in-out infinite;
+      right: -210%;
+      background: linear-gradient(to left,
+          rgba(255, 255, 255, 0.13) 0%,
+          rgba(255, 255, 255, 0.13) 33%,
+          rgba(255, 255, 255, 0.5) 66%,
+          rgba(255, 255, 255, 0.0) 100%);
+    }
+  }
 }
