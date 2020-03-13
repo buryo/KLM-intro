@@ -1,17 +1,27 @@
-
 // Shine effect
 @keyframes shine-to-right {
   10% {
     opacity: 1;
     left: -30%;
-    transition-property: left, top, opacity;
-    transition-duration: 0.7s, 0.7s, 0.15s;
     transition-timing-function: ease;
   }
 
   100% {
     opacity: 0;
     left: -30%;
-    transition-property: left, top, opacity;
+  }
+}
+
+// Shine effect
+@keyframes shine-to-left {
+  10% {
+    opacity: 1;
+    right: -30%;
+    transition-timing-function: ease;
+  }
+
+  100% {
+    opacity: 0;
+    right: -30%;
   }
 }

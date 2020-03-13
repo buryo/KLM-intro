@@ -1,0 +1,9 @@
+.radical-innovation {
+  background: url("/assets/images/redical-innovation-bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.card {
+  background-color: #ffffff5e;
+  transform: translateY(-140px);
+}

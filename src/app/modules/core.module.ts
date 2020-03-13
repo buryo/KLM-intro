@@ -1,4 +1,6 @@
 import { EcoSystemComponent } from './pages/eco-system/eco-system.component';
+import { RadicalInnovationComponent } from './pages/radical-innovation/radical-innovation.component';
+
 import { AppRoutingModule } from '../app-routing.module';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -9,10 +11,8 @@ import { NgbdModalComponent, ModalComponent } from '../shared/modal/modal.compon
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
-
 @NgModule({
-  declarations: [EcoSystemComponent,NgbdModalComponent, ModalComponent],
+  declarations: [EcoSystemComponent,NgbdModalComponent, ModalComponent, RadicalInnovationComponent],
   imports: [
     AppRoutingModule,
     CommonModule,
