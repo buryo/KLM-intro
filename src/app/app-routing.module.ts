@@ -1,7 +1,7 @@
+import { RadicalInnovationComponent } from './modules/pages/radical-innovation/radical-innovation.component';
 import { EcoSystemComponent } from './modules/pages/eco-system/eco-system.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Page2Component } from './test/page2/page2.component';
 import { Page3Component } from './test/page3/page3.component';
 
 
@@ -13,8 +13,8 @@ const routes: Routes = [
     data: { animation: 'isLeft' }
   },
   {
-    path: 'page2',
-    component: Page2Component
+    path: 'radical-innovation',
+    component: RadicalInnovationComponent
   },
   {
     path: 'page3',
