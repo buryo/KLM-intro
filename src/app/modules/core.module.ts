@@ -5,9 +5,10 @@ import { AppRoutingModule } from '../app-routing.module';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgModule } from '@angular/core';
+import { CounsilsComponent } from './pages/counsils/counsils.component';
 
 @NgModule({
-  declarations: [EcoSystemComponent, RadicalInnovationComponent],
+  declarations: [EcoSystemComponent, RadicalInnovationComponent, CounsilsComponent],
   imports: [
     AppRoutingModule,
     CommonModule,

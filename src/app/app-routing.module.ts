@@ -1,8 +1,8 @@
+import { CounsilsComponent } from './modules/pages/counsils/counsils.component';
 import { RadicalInnovationComponent } from './modules/pages/radical-innovation/radical-innovation.component';
 import { EcoSystemComponent } from './modules/pages/eco-system/eco-system.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Page3Component } from './test/page3/page3.component';
 
 
 const routes: Routes = [
@@ -17,8 +17,8 @@ const routes: Routes = [
     component: RadicalInnovationComponent
   },
   {
-    path: 'page3',
-    component: Page3Component,
+    path: 'counsils',
+    component: CounsilsComponent,
     data: { animation: 'isRight' }
   },
 ];
