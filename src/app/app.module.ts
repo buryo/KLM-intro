@@ -5,6 +5,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TestModule } from './test/test.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +18,12 @@ import { TestModule } from './test/test.module';
     RouterModule,
     BrowserAnimationsModule,
     TestModule,
-    CoreModule
+    CoreModule,
+    SharedModule,
+    FontAwesomeModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
