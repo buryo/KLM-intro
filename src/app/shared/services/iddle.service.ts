@@ -1,10 +1,7 @@
-import { Router } from '@angular/router';
-import { Injectable } from '@angular/core';
+import { Router } from "@angular/router";
+import { Injectable } from "@angular/core";
 
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: "root"})
 export class IddleService {
   // The Window timer.
   timer: NodeJS.Timeout;
@@ -21,29 +18,26 @@ export class IddleService {
       this.timer = this.startTimer();
     });
   }
-  
-  autoRedirect(){
-   return setTimeout(()=> {
-     console.log("autoRedirect");
-      if(this.timer){
-        this.router.navigate(['/'])
+
+  autoRedirect() {
+    return setTimeout(() => {
+      console.log("autoRedirect");
+      if (this.timer) {
+        this.router.navigate(["/"]);
       }
-    },10000)
+    }, 2000);
   }
 
- // wait 20 seconds before calling checkInactive
+  // wait 20 seconds before calling checkInactive
   startTimer() {
     return setTimeout(() => {
       console.log("activated");
-      
-      if (confirm('Hallo is iemand daar?')) {
+
+      if (confirm("Hallo is iemand daar?")) {
         return false;
       } else {
-        this.router.navigate(['/'])
+        this.router.navigate(["/"]);
       }
-    }, 11000);
+    }, 1000);
   }
- 
-
-
 }

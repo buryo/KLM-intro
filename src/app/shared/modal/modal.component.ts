@@ -1,45 +1,39 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalConfig, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { RouterOutlet } from '@angular/router';
+import {IddleService} from '../services/iddle.service'
 
 @Component({
   selector: 'app-modal',
-  template: `
-  <div class="modal-header">
-    <h4 class="modal-title">Hi there!</h4>
-    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p>Hello, {{name}}!</p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-  </div>
-`
+  templateUrl: './modal.component.html',
+  styleUrls: ["./modal.component.css"],
+  providers: [NgbModalConfig, NgbModal],
 })
 export class ModalComponent implements OnInit {
-
-
-  ngOnInit(): void {
+  
+  constructor( config: NgbModalConfig,
+    private modalService: NgbModal,
+    private idleFunction: IddleService
+    ) {
+      // customize default values of modals used by this component tree
+       config.backdrop = 'static';
+       config.keyboard = false;
+       this.idleFunction.setup();
+      }
+      
+   // You can use this data to control which transition to execute for each route.
+   prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
+    );
   }
 
-  @Input() name;
+  ngOnInit(): void {}
 
-  constructor(public activeModal: NgbActiveModal) {}
-}
-
-@Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html'
-})
-
-export class NgbdModalComponent {
-  constructor(private modalService: NgbModal) {}
-
-  open() {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.name = 'World';
+  open(content) {
+    this.modalService.open(content);
   }
-
 }
+
+
+
