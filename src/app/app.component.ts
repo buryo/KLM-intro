@@ -1,4 +1,4 @@
-import { IddleService } from "./shared/services/iddle.service";
+import { IdleService } from './shared/services/idle.service';
 import { Component } from "@angular/core";
 import { slider } from "./route-animations";
 import { RouterOutlet } from "@angular/router";
@@ -10,7 +10,7 @@ import { RouterOutlet } from "@angular/router";
   animations: [slider]
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private IdleService: IdleService) {}
 
   // You can use this data to control which transition to execute for each route.
   prepareRoute(outlet: RouterOutlet) {
@@ -19,5 +19,7 @@ export class AppComponent {
     );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 }

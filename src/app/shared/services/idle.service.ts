@@ -1,14 +1,15 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from "@angular/router";
 import { Injectable } from "@angular/core";
 
-@Injectable({ providedIn: "root"})
-export class IddleService {
+@Injectable({ providedIn: "root" })
+export class IdleService {
   // The Window timer.
   timer: NodeJS.Timeout;
-  constructor(private router: Router) {
+
+  constructor(private router: Router, private modalService: NgbModal) {
     this.setup();
     this.timer = this.startTimer();
-    this.autoRedirect();
   }
 
   //Seting up the listners to DOM if the user is active
@@ -19,25 +20,10 @@ export class IddleService {
     });
   }
 
-  autoRedirect() {
-    return setTimeout(() => {
-      console.log("autoRedirect");
-      if (this.timer) {
-        this.router.navigate(["/"]);
-      }
-    }, 2000);
-  }
-
   // wait 20 seconds before calling checkInactive
   startTimer() {
     return setTimeout(() => {
-      console.log("activated");
-
-      if (confirm("Hallo is iemand daar?")) {
-        return false;
-      } else {
-        this.router.navigate(["/"]);
-      }
-    }, 1000);
+      this.router.navigate(['/']);
+    }, 20000);
   }
 }
